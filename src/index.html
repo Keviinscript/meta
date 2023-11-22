@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./input.css">
+   
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/euclid-circular-b" rel="stylesheet">
+                
+    <title>Document</title>
+</head>
+<body>
+    <main class="h-[100vh]">
+            <div class="border-b-2 border-gray-200">
+                <div class="flex justify-between items-center w-[90%] mx-auto">
+                    <div>
+                        <img src="./img/MetaMask-Logo-removebg-preview.png" class="logo" alt="">
+                    </div>
+                    <div>
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </div>
+            <section class=" w-[90%] mx-auto py-[4em]">
+                <div class="replacedContent">
+                    <div class="text-center">
+                        <div class="space-y-4  ">
+                            <h1 class="font-source text-gray-800 font-bold text-[2em] tracking-tight"> 
+                                A crypto wallet & gateway to blockchain apps
+                            </h1>
+                            <h2 class="font-source text-gray-800 font-normal text-[1em] tracking-tight">
+                                Start exploring blockchain applications in seconds. Trusted by over 100 million users worldwide.
+                            </h2>
+                            <button id="connectBtn" class=" bg-blue-600 px-4 py-4 rounded-3xl font-source text-white text-[16px]">
+                                Connect MetaMask Portfolio
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="flex justify-center items-center w-[90%] mx-auto">
+                <img src="./img/home-hero.webp" class="w-auto max-w-full " alt="">
+            </section>
+    </main>  
+    
+    <script>
+
+        conectBtn = document.querySelector("#connectBtn");
+        replacedContent= document.querySelector(".replacedContent")
+
+        conectBtn.addEventListener("click",()=>{
+            replacedContent.innerHTML = changeItems()
+        })
+
+
+        function changeItems(){
+            let signin= `<form>
+                <div class="mx-auto grid gap-6 mb-5">
+                                    <div class="relative z-0">
+                                    <input required type="email" id="floating_standard" class="block rounded-t-lg px-2.5 pb-2.5  w-full text-sm text-gray-900 bg-gray-50  border-0 border-b-2  appearance-none border-gray-600  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                    <label for="floating_standard" class="absolute ml-1 text-sm text-maingrey duration-300 transform -translate-y-7 scale-75 top-2  origin-[0] peer-focus:start-0 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-95 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
+                                    </div>  
+                                    <div class="relative z-0">
+                                    <input required type="password" id="floating_standard" class="block rounded-t-lg px-2.5 pb-2.5  w-full text-sm text-gray-900 bg-gray-50  border-0 border-b-2  appearance-none border-gray-600  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                    <label for="floating_standard" class="absolute ml-1 text-sm text-maingrey duration-300 transform -translate-y-7 scale-75 top-2  origin-[0] peer-focus:start-0 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-95 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
+                                    </div> 
+                                    <div class="mb-6">
+                                    <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 ">Secret Recovery Phrase</label>
+                                    <input type="text" id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 " required>
+                                    </div>  
+                      
+                                
+                                    <div class="pt-[1em] flex justify-center ">
+                                    <button type="submit" class="text-white bg-mainred focus:ring-4 focus:outline-none  font-semibold rounded-lg text-sm w-full sm:w-[50%] px-5 py-2.5 text-center ">Submit</button>
+                                    
+                                    </div>             
+                                </div>
+                
+                </form>`;
+
+                return signin
+        }
+    </script>
+</body>
+</html>

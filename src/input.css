@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo{
+    width: 10em;
+    max-width: 100%;
+}
+
+.ri-menu-line{
+    width: 6em;
+    font-weight: 700;
+}
