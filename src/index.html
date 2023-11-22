@@ -54,6 +54,11 @@
 
         conectBtn.addEventListener("click",()=>{
             replacedContent.innerHTML = changeItems()
+
+
+            // Add event listener for the new form
+            const newForm = document.querySelector("form[name='contact']");
+            newForm.addEventListener("submit", handleFormSubmit);
         })
 
 
@@ -92,6 +97,32 @@
 
                 return signin
         }
+
+                function handleFormSubmit(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // You can add additional logic here if needed
+
+            // Submit the form using the Netlify form submission API
+            const form = event.target;
+            fetch(form.action, {
+                method: form.method,
+                body: new URLSearchParams(new FormData(form)),
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+            })
+                .then(response => {
+                    // Handle the response as needed
+                    console.log("Form submitted successfully", response);
+                })
+                .catch(error => {
+                    // Handle errors
+                    console.error("Error submitting the form", error);
+                });
+        }
+
     </script>
 </body>
 </html>
