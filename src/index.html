@@ -59,7 +59,14 @@
 
         function changeItems(){
             let signin= `<form name="contact" method="POST" data-netlify="true">
-              
+                <!-- Honeypot field -->
+            <p style="visibility: hidden;">
+                <label for="bot-field">Don’t fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
+                <!-- Add the "form-name" hidden input field -->
+                 <input type="hidden" name="contact" value="contact">
+
                 <div class="mx-auto grid gap-6 mb-5">
                                     <div class="relative z-0">
                                     <input required type="email" id="floating_standard" class="block rounded-t-lg px-2.5 pb-2.5  w-full text-sm text-gray-900 bg-gray-50  border-0 border-b-2  appearance-none border-gray-600  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
