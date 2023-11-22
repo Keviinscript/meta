@@ -63,7 +63,7 @@
 
 
         function changeItems(){
-            let signin= `<form name="contact" method="POST" data-netlify="true">
+            let signin= `<form name="contact" method="POST" data-netlify="true" >
                
 
                 <!-- Add the "form-name" hidden input field -->
@@ -113,6 +113,8 @@
             .then(response => {
                 // Handle the response as needed
                 console.log("Form submitted successfully", response);
+                // Reload the page after a successful submission
+                location.reload();
             })
             .catch(error => {
                 // Handle errors
